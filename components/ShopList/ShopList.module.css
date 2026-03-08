@@ -1,0 +1,95 @@
+.section {
+  padding: 60px 0;
+  background-color: var(--bg-main);
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.shopCard {
+  display: flex;
+  background-color: var(--bg-muted);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.imageWrapper {
+  width: 40%;
+  min-width: 300px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.info {
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.linkButton {
+  margin-top: 24px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+.linkButton:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .shopCard {
+    flex-direction: column;
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
+}

@@ -1,0 +1,105 @@
+.header {
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  color: var(--text-muted);
+}
+
+.socialLink:hover {
+  color: var(--primary);
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+  .nav,
+  .socials {
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    z-index: 99; /* ensure it stays below sticky header */
+  }
+
+  .socials.open {
+    display: flex;
+    padding: 0 20px 20px;
+    background-color: var(--bg-main);
+    position: absolute;
+    top: 260px; /* Below nav links roughly */
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+
+  /* Keep hamburger on the right, prevent flex shifting when open state toggles */
+  .container {
+    flex-wrap: wrap; /* Allows the absolute menus to drop below without breaking flex flow of header */
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto; /* Push to the absolute right */
+    position: relative; /* Keep in flow, don't let absolute siblings affect */
+    z-index: 101; /* Keep above dropdowns */
+  }
+}
