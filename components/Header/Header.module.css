@@ -24,13 +24,16 @@
 
 .nav {
   display: flex;
-  gap: 24px;
+  gap: 4px;
+  margin-left: 10px;
+  flex-wrap: wrap;
 }
 
 .navLink {
   font-weight: 500;
   color: var(--text-main);
   transition: color 0.2s;
+  margin-left: 8px;
 }
 
 .navLink:hover {
@@ -77,7 +80,8 @@
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-md);
-    z-index: 99; /* ensure it stays below sticky header */
+    z-index: 99;
+    /* ensure it stays below sticky header */
   }
 
   .socials.open {
@@ -85,7 +89,8 @@
     padding: 0 20px 20px;
     background-color: var(--bg-main);
     position: absolute;
-    top: 260px; /* Below nav links roughly */
+    top: 260px;
+    /* Below nav links roughly */
     left: 0;
     right: 0;
     z-index: 99;
@@ -93,13 +98,17 @@
 
   /* Keep hamburger on the right, prevent flex shifting when open state toggles */
   .container {
-    flex-wrap: wrap; /* Allows the absolute menus to drop below without breaking flex flow of header */
+    flex-wrap: wrap;
+    /* Allows the absolute menus to drop below without breaking flex flow of header */
   }
 
   .hamburger {
     display: block;
-    margin-left: auto; /* Push to the absolute right */
-    position: relative; /* Keep in flow, don't let absolute siblings affect */
-    z-index: 101; /* Keep above dropdowns */
+    margin-left: auto;
+    /* Push to the absolute right */
+    position: relative;
+    /* Keep in flow, don't let absolute siblings affect */
+    z-index: 101;
+    /* Keep above dropdowns */
   }
 }
